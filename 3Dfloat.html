@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: rgb(181, 223, 119);
+      height: 100vh;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      & li {
+        list-style: none;
+        & p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+  
+          width: 200px;
+          height: 55px;
+  
+          background-color: rgb(255, 253, 250);
+  
+          transform: rotate(-15deg) skewX(45deg);
+          box-shadow: -45px 32px 10px #999;
+          transition: .75s;
+        }
+        & p::before {
+          content: '';
+          position: absolute;
+          top: 16.5px;
+          left: -40px;
+          height: 100%;
+          width: 40px;
+          background-color: antiquewhite;
+          transform: rotate(0) skewY(-39deg);
+          transition: .75s;
+        }
+        & p::after{
+          content: '';
+          position: absolute;
+          top: 55px;
+          left: -20px;
+          height: 33px;
+          width: 100%;
+          background-color: rgb(255, 246, 233);
+          transform: rotate(0) skewX(-51deg);
+          transition: .75s;
+        }
+      }
+      & li:hover {
+        & p {
+          font-size: 28px;
+          font-weight: bold;
+          color: white;
+          background-color: rgb(255, 102, 0);
+          transform: rotate(-15deg) skewX(45deg) translate(25px, -20px);
+          box-shadow: calc(-45px - 25px) calc(32px + 20px) 30px #999;
+
+          &::before {
+            background-color: rgb(214, 92, 10);
+          }
+          &::after {
+            background-color: rgb(233, 97, 6);
+          }
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><p>L</p></li>
+    <li><p>A</p></li>
+    <li><p>O</p></li>
+    <li><p>R</p></li>
+    <li><p>Y</p></li>
+  </ul>
+</body>
+</html>
